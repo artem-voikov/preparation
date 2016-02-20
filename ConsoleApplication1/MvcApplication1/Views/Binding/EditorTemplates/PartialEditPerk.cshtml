@@ -1,0 +1,17 @@
+﻿@model MvcApplication1.Infrastructure.IndexedModel<MvcApplication1.Models.Perk>
+
+
+<table>
+	<tr>
+		<td>Name</td>
+		<td>@Html.TextBox("perk.Name[" + Model.Index + "]", Model.Model.Name )</td>
+		<td>@*@Html.TextBoxFor(x=>x.Model.Name, new { name = 123})*@</td>
+		@*<td>@Html.EditorFor(x => x.Model.Name, new { index = Model.Index })<td>*@
+	</tr>
+	<tr>
+		<td>Description</td>
+		<td>@Html.TextBox("perk.Description[" + Model.Index + "]", Model.Model.Description )</td>
+		@*<td>@Html.TextBoxFor(x=>x.Model.Description)</td>*@
+		@*<td>@Html.EditorFor(x => x.Model.Description, new { index = Model.Index})</td>*@
+	</tr>
+</table>

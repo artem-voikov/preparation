@@ -1,0 +1,34 @@
+﻿@using MvcApplication1.Infrastructure
+@using MvcApplication1.Models
+@using WebGrease.Css.Extensions
+@model MvcApplication1.Models.Animal
+
+<table>
+	<tr>
+		<td>
+			Name
+		</td>
+		<td>
+			@Html.EditorFor(x => x.Name)
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Family
+		</td>
+		<td>
+			@Html.EditorFor(x => x.Family)
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Perks
+		</td>
+		<td>
+			@foreach (var indexedPerk in Model.Perks.Select((x, i) => new IndexedModel<Perk>(i, x)))
+			{
+				@Html.Partial("EditorTemplates/PartialEditPerk", indexedPerk);
+			}
+		</td>
+	</tr>
+</table>

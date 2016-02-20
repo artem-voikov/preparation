@@ -1,0 +1,14 @@
+﻿@model MvcApplication1.Models.Animal
+
+@{
+	ViewBag.Title = "EditAnimal";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EditAnimal</h2>
+
+@using (Html.BeginForm("EditAnimal"))
+{
+	<input type="submit" value="go"/>
+	@Html.EditorFor(x => x, "PartialEditAnimal")	
+}

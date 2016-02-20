@@ -1,0 +1,14 @@
+﻿@model System.Collections.Generic.List<string>
+
+@{
+	ViewBag.Title = "Test performance wizzard";
+}
+
+<h2>Test performance wizzard</h2>
+
+<ul>
+	@for (var i = 0; i < Model.Count; i++)
+	{
+		<li>@Model[i]</li>
+	}
+</ul>

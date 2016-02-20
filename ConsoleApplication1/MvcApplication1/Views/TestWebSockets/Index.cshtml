@@ -1,0 +1,13 @@
+﻿@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<div id="pnlResult">
+
+</div>
+<input type="text" id="txtMsg"/> <input type="button" id="btnSend" value="send"/>
+
+
+@Html.Hidden("urlForSocketActivation", VirtualPathUtility.ToAbsolute(Url.Action("ActivateChat", "TestWebSockets")), new { id = "hdnUrlForSocketActivation" })

@@ -1,0 +1,14 @@
+﻿@model MvcApplication1.Models.County
+@{
+	ViewBag.Title = "Edit";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+@using (Html.BeginForm("Edit"))
+{
+	<input type="submit" value="go"/>
+	@Html.EditorFor(x => x, "PartialEditCounty")
+
+	
+}

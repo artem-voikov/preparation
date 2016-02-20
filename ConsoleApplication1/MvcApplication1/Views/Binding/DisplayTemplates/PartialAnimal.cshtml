@@ -1,0 +1,14 @@
+﻿@model MvcApplication1.Models.Animal
+
+
+<div>
+	<strong>@Model.Name @Model.Family</strong>
+	<dl>
+		@for (var i = 0; i < Model.Perks.Length; i++)
+		{
+			@Html.DisplayFor(x => x.Perks[i], "PartialPerk")
+		}
+	</dl>
+</div>
+
+

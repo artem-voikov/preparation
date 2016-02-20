@@ -1,0 +1,34 @@
+﻿@model MvcApplication1.Models.County
+
+<table>
+	<tbody>
+		<tr>
+			<td>Model.Name</td>
+			<td>@Html.EditorFor(x => x.Name)</td>
+		</tr>
+		<tr>
+			<td>Model.ApexPredator</td>
+			<td>@Html.EditorFor(x => x.ApexPredator, "PartialEditAnimal")</td>
+		</tr>
+		<tr>
+			<td>@Model.Animals</td>
+			<td>
+				@foreach (var family in Model.Animals)
+				{
+					<table>
+						<tr>
+							<td>@family.Key</td>
+							<td>
+								@foreach (var animal in family.Value)
+								{
+									@Html.EditorFor(x => animal, "PartialEditAnimal")
+								}
+							</td>
+						</tr>
+					</table>
+					
+				}
+			</td>
+		</tr>
+	</tbody>
+</table>

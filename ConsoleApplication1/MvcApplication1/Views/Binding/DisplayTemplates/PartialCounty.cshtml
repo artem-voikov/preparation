@@ -1,0 +1,24 @@
+﻿@using MvcApplication1.Models
+@model MvcApplication1.Models.County
+
+<h2>@Model.Name</h2>
+
+
+<h3>Apex predator</h3>
+<p>
+	@Html.DisplayFor(x => x.ApexPredator, "PartialAnimal")
+</p>
+
+<h4>Other animals</h4>
+<div>
+	@foreach (var family in Model.Animals)
+ {
+		<h5>@family.Key</h5>
+		<p>
+			@foreach (Animal animal in family.Value)
+			{
+				@Html.DisplayFor(x => animal, "PartialAnimal")
+			}
+		</p> 
+ }
+</div>
